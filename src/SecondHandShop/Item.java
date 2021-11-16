@@ -10,15 +10,13 @@ public class Item {
     private double BuyFor;
     private double SellFor;
     private String ItemCondition;
-    private String ManufacturersDate;
 
-    public Item(String type, String name, double buyFor, double sellFor, String itemCondition, String manufacturersDate) {
-        Type = type;
-        Name = name;
-        BuyFor = buyFor;
-        SellFor = sellFor;
-        ItemCondition = itemCondition;
-        ManufacturersDate = manufacturersDate;
+    public Item(String type, String name, double buyFor, double sellFor, String itemCondition) {
+        setType(type);
+        setName(name);
+        setBuyFor(buyFor);
+        setSellFor(sellFor);
+        setItemCondition(itemCondition);
     }
 
     public String getType() {
@@ -69,21 +67,12 @@ public class Item {
         ItemCondition = itemCondition;
     }
 
-    public String getManufacturersDate() {
-        return ManufacturersDate;
-    }
-
-    public void setManufacturersDate(String manufacturersDate) {
-        ManufacturersDate = manufacturersDate;
-    }
-
     @Override
     public String toString() {
         return  "Type: " + Type +
                 "\nName: " + Name +
                 "\nBuy for: " + BuyFor +
                 "\nSell for: " + SellFor +
-                "\nItem condition: " + ItemCondition +
-                "\nManufacturers Date: " + ManufacturersDate;
+                "\nItem condition: " + ItemCondition;
     }
 }

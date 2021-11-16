@@ -5,17 +5,19 @@ public class Game extends Item{
     private String AgeRating;
     private boolean CrossPlay;
     private Platform Platform;
+    private String ReleaseDate;
 
     public Game(String type, String name,
                 double buyFor, double sellFor,
                 String itemCondition, String manufacturersDate,
                 String ageRating, boolean crossPlay,
-                Platform platform)
+                Platform platform, String releaseDate)
     {
-        super(type, name, buyFor, sellFor, itemCondition, manufacturersDate);
+        super(type, name, buyFor, sellFor, itemCondition);
         setAgeRating(ageRating);
         setCrossPlay(crossPlay);
         setPlatform(platform);
+        setReleaseDate(releaseDate);
     }
 
     public String getAgeRating() {
@@ -42,11 +44,20 @@ public class Game extends Item{
         Platform = platform;
     }
 
+    public String getReleaseDate() {
+        return ReleaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        ReleaseDate = releaseDate;
+    }
+
     @Override
     public String toString() {
         return super.toString() +
-                "\nAgeRating: " + AgeRating +
-                "\nCrossPlay: " + CrossPlay +
-                "\nPlatform: " + Platform.getType();
+                "\nAge rating: " + AgeRating +
+                "\nCross-Play: " + CrossPlay +
+                "\nPlatform: " + Platform.getType() +
+                "\nRelease date: " + getReleaseDate();
     }
 }
