@@ -47,6 +47,6 @@ public class Game extends Item{
         return super.toString() +
                 "\nAgeRating: " + AgeRating +
                 "\nCrossPlay: " + CrossPlay +
-                "\nPlatform: " + Platform;
+                "\nPlatform: " + Platform.getType();
     }
 }
