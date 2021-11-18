@@ -13,7 +13,7 @@ public class Game extends Item{
                 String ageRating, boolean crossPlay,
                 Platform platform, String releaseDate)
     {
-        super(type, name, buyFor, sellFor, itemCondition);
+        super(type, name, buyFor, itemCondition);
         setAgeRating(ageRating);
         setCrossPlay(crossPlay);
         setPlatform(platform);

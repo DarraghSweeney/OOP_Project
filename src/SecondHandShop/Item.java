@@ -11,15 +11,19 @@ public class Item {
     private double SellFor;
     private String ItemCondition;
 
-    public Item(String type, String name, double buyFor, double sellFor, String itemCondition) {
+    public Item(String type, String name, double buyFor, String itemCondition) {
         setType(type);
         setName(name);
         setBuyFor(buyFor);
-        setSellFor(sellFor);
         setItemCondition(itemCondition);
     }
 
     public String getType() {
+
+        if (Type == "Console")
+        {
+
+        }
         return Type;
     }
 
@@ -52,10 +56,27 @@ public class Item {
     }
 
     public double getSellFor() {
+
+        Double Interest;
+
+        if (getBuyFor() <= 9.99)
+            Interest = 0.5;
+
+        else if(getBuyFor() <= 29.99 && getBuyFor() >= 10)
+            Interest = 0.25;
+
+        else if(getBuyFor() <= 50 && getBuyFor() >= 30)
+            Interest = 0.15;
+
+        else Interest = 0.10;
+
+        SellFor = getBuyFor() * Interest;
+
         return SellFor;
     }
 
     public void setSellFor(double sellFor) {
+
         SellFor = sellFor;
     }
 
@@ -66,6 +87,7 @@ public class Item {
     public void setItemCondition(String itemCondition) {
         ItemCondition = itemCondition;
     }
+
 
     @Override
     public String toString() {
