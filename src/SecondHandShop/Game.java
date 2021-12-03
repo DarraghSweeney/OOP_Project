@@ -8,8 +8,7 @@ public class Game extends Item{
     private String ReleaseDate;
 
     public Game(String type, String name,
-                double buyFor, double sellFor,
-                String itemCondition, String manufacturersDate,
+                double buyFor, String itemCondition, String manufacturersDate,
                 String ageRating, boolean crossPlay,
                 Platform platform, String releaseDate)
     {

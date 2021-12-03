@@ -14,6 +14,9 @@ public class ShopGUI extends JFrame implements ActionListener {
     JButton DevicesButton = new JButton("Devices");
     JButton ComputersButton = new JButton("Computers");
     JMenu fileMenu, EditMenu;
+    JPanel Toppanel = new JPanel();
+    JPanel Midpanel = new JPanel();
+    JPanel Bottompanel = new JPanel();
 
     public ShopGUI(){
 
@@ -24,13 +27,11 @@ public class ShopGUI extends JFrame implements ActionListener {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         menuBar.add(fileMenu);
-        menuBar.setBackground(Color.yellow);
+        menuBar.setBackground(Color.lightGray);
         BorderLayout layout = new BorderLayout(6,8);
         setLayout(layout);
 
-        JPanel Toppanel = new JPanel();
-        JPanel Midpanel = new JPanel();
-        JPanel Bottompanel = new JPanel();
+
 
         GamesButton.addActionListener(this);
         ConsoleButton.addActionListener(this);
@@ -72,7 +73,21 @@ public class ShopGUI extends JFrame implements ActionListener {
 
         if(e.getSource()==GamesButton)
         {
-            System.out.print("Games");
+            JFrame GameFrame = new JFrame();
+            GameFrame.setLayout(new BorderLayout(2,2));
+            GameFrame.add(Toppanel);
+            GameFrame.add(Midpanel);
+            GameFrame.add(Bottompanel);
+            JButton Add = new JButton("Add");
+            JButton Amend = new JButton("Amend");
+            JButton Delete = new JButton("Delete");
+
+            Toppanel.add(Add);
+            Midpanel.add(Amend);
+            Bottompanel.add(Delete);
+            GameFrame.setVisible(true);
+            GameFrame.setSize(400,400);
+
         }
 
         else if(e.getSource()==ConsoleButton)

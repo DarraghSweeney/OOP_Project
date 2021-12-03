@@ -1,6 +1,15 @@
 package SecondHandShop;
 
+import java.util.ArrayList;
+
 public class TestShopSystem {
+
+    ArrayList<Game> games = new ArrayList<>();
+    ArrayList<Platform> gamesConsoles = new ArrayList<>();
+    ArrayList<Device> Devices = new ArrayList<>();
+    ArrayList<Computer> Computers = new ArrayList<>();
+
+
     public static void main(String[] args) {
 
         Platform p1 = new Platform("Xbox One","Microsoft");
@@ -10,9 +19,11 @@ public class TestShopSystem {
         Platform p5 = new Platform("Nintendo Switch","Microsoft");
         Platform p6 = new Platform("Nintendo Wii","Microsoft");
 
-       Game g1 = new Game("Game","Red Dead Redemption",5.99,9.99, "Excellent","2009","PG13",true, p1, "2009");
+       Game g1 = new Game("Game","Red Dead Redemption",5.99, "Excellent","2009","PG13",true, p1, "2009");
+        Game g2 = new Game("Game","Red Dead Redemption",10, "Excellent","2009","PG13",true, p1, "2009");
 
-        System.out.println(g1);
+        System.out.println(g1.toString());
+        System.out.println(g2.toString());
 
        // Device d1 = new Device("PC","Alienware",500,549.99,"Good","40 KwH",true);
 

@@ -16,6 +16,7 @@ public class Item {
         setName(name);
         setBuyFor(buyFor);
         setItemCondition(itemCondition);
+        setItemID(getItemID());
     }
 
     public String getType() {
