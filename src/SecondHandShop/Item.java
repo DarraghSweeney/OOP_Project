@@ -59,6 +59,8 @@ public class Item {
 
         Double Interest;
 
+        SellFor = BuyFor;
+
         if (getBuyFor() <= 9.99)
             Interest = 0.5;
 
@@ -70,7 +72,7 @@ public class Item {
 
         else Interest = 0.10;
 
-        SellFor = getBuyFor() * Interest;
+        SellFor += getBuyFor() * Interest;
 
         return SellFor;
     }
@@ -94,7 +96,7 @@ public class Item {
         return  "Type: " + Type +
                 "\nName: " + Name +
                 "\nBuy for: " + BuyFor +
-                "\nSell for: " + SellFor +
+                "\nSell for: " + String.format("%.2f",getSellFor()) +
                 "\nItem condition: " + ItemCondition;
     }
 }
